@@ -1,0 +1,27 @@
+Chunk idx 0:
+0x18  	(father idx 2)
+0x38	<- free
+
+Chunk idx 1:
+0x18	(child idx 2: padding '1'*0x18)
+0x88	<- free (size: 0x91)
+
+Chunk idx 2: request = 0x18 -> malloc(0x18)
+
+Chunk idx 3: malloc(0x18)
+0x18
+0x18
+
+Chunk idx 4: size bi thay doi
+0x18
+0x38 -> 0x88 (free(4) -> add(0x88))
+
+Chunk idx 5:
+0x18
+0x38
+
+Ghi de chunk bi free -> stack (pop rdi, exe.got.puts, exe.plt.puts, main)
+
+Copy(1 -> 3)
+
+tcache ko can size
